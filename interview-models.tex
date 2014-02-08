@@ -1,0 +1,433 @@
+\documentclass[11pt,twoside]{article}
+\usepackage[toc,page,header]{appendix}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{changepage}
+\usepackage{fontspec}
+\defaultfontfeatures{Scale=MatchLowercase}
+\setmainfont[Mapping=tex-text]{Times New Roman}
+\setsansfont[Mapping=tex-text]{Arial}
+\setmonofont{Courier}
+
+\usepackage{float}
+\usepackage{turnstile}
+\usepackage{bussproofs}
+
+\usepackage{geometry}
+\geometry{letterpaper}
+
+\newtheorem{theorem}{Theorem}
+%\newtheorem{cor}{Corollary}
+%\newtheorem{lem}{Lemma}
+%\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newtheorem{objection}{Objection}
+\newenvironment*{response}[1][]{\noindent
+\textbf{Response to Objection #1.}
+\begin{adjustwidth}{1em}{1em}
+}
+{\end{adjustwidth}
+\vspace{1ex}
+}
+
+
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+
+\usepackage{graphicx}
+\usepackage[leftcaption]{sidecap}
+\sidecaptionvpos{figure}{c}
+
+%\usepackage{amssymb}
+
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage[
+bibstyle=numeric,
+citestyle=authortitle,
+natbib=true,
+hyperref,bibencoding=utf8,backref=true,backend=biber]{biblatex}
+
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={The Survey Interview: Models and Protocols},    % title
+    pdfauthor={G. A. Reynolds},     % author
+    pdfsubject={Survey Interviews},   % subject of the document
+    pdfcreator={G. A. Reynolds},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links
+    citecolor=blue,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\usepackage{draftwatermark}
+
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+
+\lhead[Models of Interviewing]{\thepage}
+\chead[]{}
+\rhead[\thepage]{Models of Interviewing}
+
+\title{Models of Survey Interviewing}
+\author{G. A. Reynolds}
+\date{\today}
+\bibliography{%
+../bib/abstracts.bib,%
+../bib/brandom.bib,%
+../bib/causality.bib,%
+../bib/em.bib,%
+../bib/logic.bib,%
+../bib/mind.bib,%
+../bib/philosophy.bib,%
+../bib/pragmatism.bib,%
+../bib/psychomet.bib%
+../bib/psychometrics.bib,%
+../bib/misc.bib,%
+../bib/measurement.bib,%
+../bib/psychology.bib,%
+../bib/variables.bib,%
+../bib/val.bib,%
+../bib/validity.bib,%
+}
+
+%% Macros
+
+\newcommand{\SM}{Standard Model}
+\newcommand{\XSM}{Extended Standard Model}
+
+\newcommand{\SMeth}{Survey Methodology}
+
+\newcommand{\SR}{Survey Research}
+\newcommand{\sr}{survey research}
+\newcommand{\SRIV}{Survey Interview}
+\newcommand{\sriv}{survey interview}
+\newcommand{\SIV}{Survey Interviewing}
+\newcommand{\FI}{Field Interviewer}
+\newcommand{\Iver}{Interviewer}
+\newcommand{\R}{Respondent}
+\newcommand{\LPR}{Legal Permanent Resident}
+\newcommand{\ART}{Assimilated Response Technique}
+\newcommand{\GAM}{Grouped Answer Method}
+\newcommand{\IOM}{Instrument of Measurement}
+
+\includeonly{%
+%% pilots,cards
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\nocite{*}
+
+\begin{abstract}
+This paper analyzes and compares three models of survey
+interviewing.  That is, models of the conduct of survey interviewing,
+rather than models of the structure of questionnaires, interviews,
+etc.  The first is the Laboratory Model, which is motivated by a
+desire to mimic the experimental physical sciences, paradigmatically
+physics.  The paradigmatic example of this sort of model is the
+``Standardized Survey Interview''.  Analysis of this model exposes a
+variety of (usually) unacknowledged commitments to
+theoretical/philosophical doctrines, which are shown to be untenable.
+
+The second model is the Extended Laboratory Model.  This is a
+modification of the Laboratory Model.  It acknowledges that, due to
+the interactive nature of the interview, the interviewer inevitably
+makes a contribution.  But it retains the basic structural commitments
+of the laboratory Model.  An example of an Extented Laboratory model
+is Maynard et al's ``alternating model''.
+
+The third model is The Theatrical Model.  This model is similar to the
+Laboratory Model, in that it recommends that the interviewer read the
+questions exactly as written, avoid probes, etc., but it involves a
+very different conceptualization of the nature of interviewing.  Like
+the Extended Laboratory Model, it acknowledges that the Field
+Interviewer makes a substantial contribution to the survey interview,
+due to the fundamentally interactive and collaborative nature of
+discursive practice.  But it stresses that interviewing essentially
+involves role-playing.  This model is based on a more realistic
+picture of the nature of surveys and survey interviewing, but it also
+has some weaknesses, which we analyze.
+
+Finally, the fourth model is The Collaborative Model.  This model is
+driven by a closer and more realistic analysis of the nature of the
+survey interview.  It demystifies aspects of the interview that the
+other two models take for granted or ignore, such as the various
+asymmetries involved in interviews, the fact that completion of a
+survey questionnaire is the joint responsibility of the interviewer
+and the respondent, and so forth.  It discards the fictions that are
+at the core of the other models discussed.  Most critically, motivated
+by considerations of the nature of discursive practice and the
+production of meaning, it denies that survey interviewing involves
+measurement.  In summary, this model recommends that survey
+interviewing be construed as collaborative or joint action, and that
+the demystified facts of the matter be openly acknowledged in the
+conduct of interviews.  This means, among other things, that the field
+interviewer should serve as an assistant to the respondent, rather
+than a proxy for the researcher; that interviewer and respondent are
+jointly responsible for completing the questionnaire; and that the
+results of individual survey interviews should be viewed as a trace a
+kind of dialog between the individuality of the particular respondent
+and the stereotype presupposed by the questionnaire design.
+\end{abstract}
+
+\tableofcontents
+\listoffigures
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%
+\section{The Laboratory Model}
+
+\begin{remark}
+  TODO: the legitimacy of this model is based on theoretical
+  (philosophical) commitments that are usually accepted uncritically
+  (since they are virtually never explicitly even acknowledged).  The
+  organization of this section thus should be: describe the model
+  using Standardized Interviewing as the paradigm; show that it is
+  motivated by a felt need to mimic experimental physical science;
+  show how adoption of this model implicitly entails commitment to
+  various theoretical/philosophical doctrines (theories, dogmas) as
+  models of various aspects of the Survey Interview; critique the
+  adequacy of these implicit underlying doctrines as models of
+  interviewing.
+\end{remark}
+
+The Laboratory Model is driven by the desire to mimic the techniques
+and methods of the physical sciences, paradigmatically physics.  It is
+implicitly committed to the following presuppositions:
+
+\begin{itemize}
+\item Questions are instruments of measurement
+\item The Field Interview is a laboratory technician
+\item The Respondent is a laboratory sample
+\item etc.
+\end{itemize}
+
+The Standardized Survey Interview is the paradigmatic example of this
+sort of model.  The presuppositions listed above are implemented in
+the basic recommendations of this model:
+
+\begin{itemize}
+\item Read the question exactly as worded
+\item Do not probe
+\item etc.
+\end{itemize}
+
+\subsection{Critique}
+
+There are many problems with this model, some of which have been
+explored by researchers focussing on the interactive nature of the
+interview.
+
+First, this model idealizes the FI as a kind of robot; ideally, FIs
+are interchangeable parts.  Of course even those researchers most
+committed to this model acknowledge that it is impossible to attain
+this ideal in practice.  The critical question is whether it is even
+desireable (rational) to adopt this model as an ideal.  It is not only
+unrealistic as a practical matter; even theoretically, this model is
+badly motivated.
+
+Second, under this model the ideal FI makes no contribution to the
+interview; all the work is done by the text of the question and the
+Respondent.  Not only are FIs not robots, the notion that one human
+being can ask a question of another human being without making a
+substantial contribution to the exchange is clearly false.  Even if we
+could construct interviewing robots, the dynamics of asking and
+answering questions would require
+
+A more formal way of stating this point is to observe that the ideal
+is based on an implicit premise of independence.  The idea, clearly
+drawn from experimental physical sciences, is that the actions of the
+experimenter merely serve to trigger the causal chain the results in
+the experimental outcome, which is independent of the ``quality'' of
+the experimenter's actions.  In other words, the ideal is that the
+actions of experimenter should not be genuine \textit{actions} at all;
+rather, they should be steps in an \textit{effective procedure}, and an
+effective procedure is one that can be performed by a mindless robot.
+
+\begin{remark}
+  Note the connection between scientific experimental method and the
+  concept of ``effective procedure''.  The latter is the fundamental
+  concept of computation; it only arose in the late 19th century in a
+  strictly mathematical context, and was given definitive explicit
+  meaning by Turing in 1936.  But experimental method implicitly
+  involved a notion of effective procedure long before this notion
+  emerged explicitly in mathematics.
+\end{remark}
+
+The SSIM adopts this perspective with respect to the interview, and
+thus presupposes that the asking and answering of questions are
+independent actions.  But this is clearly not the case, even in the
+ideal situation.
+
+\begin{remark}
+  TODO: trace this to underlying philosophical commitments.  In the
+  case of SSIM, the underlying commitment is to semantic atomism
+  [check terminology -GR].  In other words, once the researcher
+  decides that the interview should be modeled on the physical
+  experiment, it remains to justify this, to show that is is a
+  ``good'' model for survey interviewing.  The major philosophical
+  (theoretical) resources available to support this model are:
+  semantic atomism, the telementation model of communication, etc.
+\end{remark}
+
+Third, this model fails to recognize that rules are not sufficient; in
+order to successfully ``administer'' an interview, the FI must cope
+with the specific circumstances of particular interviewing situations,
+and must decide in each case exactly how to apply the rules of the
+SSIM.  By now it is well known both theoretically (Wittgenstein et
+al.) and empirically (Ethnomethodolgy, Conversation Analysis) that
+rules are not enough; to apply a rule, individuals inevitably must
+improvise in order to accomodate local contingencies.  Researchers in
+\SR{} [TODO: citations] have studied in some detail how FIs do this in
+actual interviews even when they attempt to follow the rules of SSIM.
+Such empirical research has clearly shown what theoretical
+considerations also demonstrate, namely the the SSIM idealization of
+the FI is a bad model.
+
+Fourth, and perhaps most important (and most problematic), this model
+presupposes that questions and questionnaires are instruments of
+measurement, and that asking a question and obtaining an answer
+amounts to taking a measurement.
+
+\begin{remark}
+  TODO: flesh this out.  A detailed analysis of the notion of
+  questions as measurements is beyond the scope of this paper, but we
+  need to say something at least about what sort of implicit
+  theoretical doctrines are implicated by this idea, and why they
+  fail.
+\end{remark}
+
+%%%%%%%%%%%%%%%%
+\section{The Extended Laboratory Model}
+
+%%%%%%%%%%%%%%%%
+\section{The Theatrical Model}
+
+The theatrical model adopts some of the rules of the SSIM, but
+discards the idealized laboratory model of interviewing.  It
+acknowledges that the FI inevitably makes a substantial contribution
+to the interview.  Instead of modeling the FI on an idealized
+laboratory technician or apparatus, it relies on the analogy between
+an FI reading a question to a Respondent and the performance of an
+actor before an audience.  The questionnaire (written by the
+Researcher) is analogous to a script; the FIs job is play the role
+defined by the script, just like an actor on stage.
+
+Instead of ``read the question exactly as worded'', the instruction to
+the FI is the director's plea: stay on script.  Do not ad lib.
+
+This model acknowledges that the script alone is not sufficient to the
+performance.  Like an a playscript, a questionnaire can only come to
+life in the hands of a performer, whose work cannot be antecedently
+specified in full.  Good theatrical directors know better than to try
+to tell an actor precisely \textit{how} to deliver a line; figuring
+that out is the responsibility of the actor and only the actor.
+Paradoxically, good acting always involves a substantially element of
+spontanaeity, even where the performance is tightly scripted.  Replace
+the actor's spontenaeity by the director's procedure and you kill the
+performance.
+
+The same goes for survey interviewing.
+
+\begin{remark}
+An important element of this model is the observation that, at least
+in many cases, the FI effectively acts as the Researcher's mouthpiece.
+The FI seems to ask questions, but this is an illusion (just like a
+stage play); in fact, it is not the FI asking the question, it is the
+Researcher.  And the both the FI and Respondent know this.  At best
+the FI may be said to ask questions on behalf of the Researcher; at
+worst, the FI cannot be said to be genuinely asking questions at all,
+any more than a Hamlet can be said to genuinely die at the end of the
+play.
+\end{remark}
+
+\begin{remark}
+  TODO: flesh out the model and critique it.  What are the underlying
+  commitments?  What about measurement?
+\end{remark}
+
+\subsection{Critique}
+
+%%%%%%%%%%%%%%%%
+\section{The Collaborative Model}
+
+This model may be thought of as a kind of de-mystified model of the
+interview.  Unlike the theatrical model, this model asks the FI and R
+to explicitly acknowledge the various fictions and positionings
+involved in a survey interview and go from there.
+
+The role of the FI in this model is neither to merely execute an
+effective procedure (as in the SSIM), nor to play a role in a
+semi-fictional drama, as in the theatrical model.  Instead, the FI is
+asked to collaborate with the Respondent in order to complete the
+questionnaire.
+
+\begin{remark}
+  The main recommendation for this model is that it is based on a more
+  realistic assessment of the nature of survey interviews.
+\end{remark}
+
+This model explicitly acknowledges:
+
+\begin{itemize}
+\item The FI asks questions on behalf of a Researcher
+\item Questions are ``recipient designed'' (Bakhtin), but the
+  recipient is a stereotype: the Ideal Respondent
+\item The survey interview is asymmetric (epistemic, power, control of
+  flow, stereotypical v. actual respondent etc.)
+\item Questions and answers are discursive moves in the ``space of reasons''
+\item Both FI and Respondent must improvise (in CA-speak, ``produce local order'' etc.)
+\item No measurement (properly so-called) is involved
+\item Completion of the interview (questionnaire) is the joint
+  responsibility of both the FI and the Respondent.
+\end{itemize}
+
+\begin{remark}
+  ``Stereotype design'' - in constructing the questionnaire, the
+  Respondent inevitably must have some idea of who the respondent(s)
+  might be.  This is not (\textit{pace} Houtkoop-Steenstra) a matter
+  of ``audience'' design as opposed to ``recipient'' design; audiences
+  do not answer questions.  The relevant distinction is between design
+  for a particular (specific individual respondent) v. design for the
+  general (idealized or ``(stereo-) typical'' member of the research
+  population); hence ``stereotype design''.  [NB: Putnam on concepts
+    as stereoptypes, \cite{putnam_meaning_1975}]
+
+  This has rarely (never to my knowledge) been recognized, but it has
+  major implications.  It means that the whole show is biased from the
+  very beginning by the Researcher's notion of what counts as a
+  stereotypical member of the research population.  And again, this
+  source of bias is never (to my knowledge) explicitly addressed.  But
+  the stereoptype, since it drives the design of the questionnaire,
+  should itself be an antecedent topic of research.
+
+Alternatively, the survey can itself be viewed as an investigation
+into the character of the stereotypic member.  The ``errors'' should
+be viewed not as errors, but as variations that may motivate a
+revision of the stereotype.
+
+\end{remark}
+
+\clearpage
+\appendix
+\begin{appendices}
+\section{Bibliography}
+%% \addcontentsline{toc}{chapter}{Bibliography}
+%% \bibliographystyle{plainnat}
+%% \printbibliography[heading=none]
+\end{appendices}
+
+\end{document}
